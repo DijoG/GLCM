@@ -4,17 +4,17 @@ A high-performance Python package for Gray-Level Co-occurrence Matrix (GLCM) tex
 
 # Features
 
-    - 🚀 Parallel Processing: Handle massive satellite imagery (3500+ km²) efficiently
+- 🚀 Parallel Processing: Handle massive satellite imagery (3500+ km²) efficiently
 
-    - 🎯 Smart Window Sizing: Automatically optimize GLCM window size for your specific data
+- 🎯 Smart Window Sizing: Automatically optimize GLCM window size for your specific data
 
-    - 📐 Vector Data Support: Work directly with GeoJSON, Shapefiles, and other vector formats
+- 📐 Vector Data Support: Work directly with GeoJSON, Shapefiles, and other vector formats
 
-    - 🌳 Vegetation Analysis: Specialized for tree vs. grass classification in arid urban areas
+- 🌳 Vegetation Analysis: Specialized for tree vs. grass classification in arid urban areas
 
-    - 💫 Multiple Textures: Compute contrast, entropy, correlation, and other GLCM features
+- 💫 Multiple Textures: Compute contrast, entropy, correlation, and other GLCM features
 
-    - 🐍 Python 3.7-3.13: Full compatibility across Python versions
+- 🐍 Python 3.7-3.13: Full compatibility across Python versions
 
 # Installation
 
@@ -104,14 +104,13 @@ optimize_window_size_from_vectors(panchromatic_path, tree_vector_path, grass_vec
 Find optimal GLCM window size using vector polygon training data.
 
 Parameters:
-
-    - `panchromatic_path`: Path to panchromatic raster
-    - `tree_vector_path`: Path to tree polygon vector file
-    - `grass_vector_path`: Path to grass polygon vector file
-    - `output_dir`: Directory for temporary masks and results
-    - `sample_km_side`: Side length of square sample area in km
-    - `center_coords`: Optional (x,y) coordinates for specific sampling area
-    - `max_workers`: Number of parallel workers
+- `panchromatic_path`: Path to panchromatic raster
+- `tree_vector_path`: Path to tree polygon vector file
+- `grass_vector_path`: Path to grass polygon vector file
+- `output_dir`: Directory for temporary masks and results
+- `sample_km_side`: Side length of square sample area in km
+- `center_coords`: Optional (x,y) coordinates for specific sampling area
+- `max_workers`: Number of parallel workers
 
 ```bash
 hybrid_parallel_glcm(input_path, output_dir, window_size=11, chunk_size=2048, max_workers=None, metrics=None)
@@ -119,36 +118,35 @@ hybrid_parallel_glcm(input_path, output_dir, window_size=11, chunk_size=2048, ma
 Compute GLCM textures in parallel across large raster datasets.
 
 Parameters:
-
-    - `input_path`: Path to input raster (panchromatic recommended)
-    - `output_dir`: Directory to save GLCM texture results
-    - `window_size`: GLCM window size (must be odd)
-    - `chunk_size`: Processing chunk size in pixels (default: 2048)
-    - `max_workers`: Number of parallel workers (default: CPU count)
-    - `metrics`: GLCM metrics to compute: ['contrast', 'entropy', 'correlation']
+- `input_path`: Path to input raster (panchromatic recommended)
+- `output_dir`: Directory to save GLCM texture results
+- `window_size`: GLCM window size (must be odd)
+- `chunk_size`: Processing chunk size in pixels (default: 2048)
+- `max_workers`: Number of parallel workers (default: CPU count)
+- `metrics`: GLCM metrics to compute: ['contrast', 'entropy', 'correlation']
 
 # Input Data Requirements
 
 ## Raster Data
 
-    - Format: GeoTIFF recommended
-    - Resolution: High-resolution (0.3-1.0m optimal for texture analysis)
-    - Bands: Panchromatic or single-band for texture computation
+- Format: GeoTIFF recommended
+- Resolution: High-resolution (0.3-1.0m optimal for texture analysis)
+- Bands: Panchromatic or single-band for texture computation
 
 ## Vector Data
 
-    - Formats: GeoJSON, Shapefile, GPKG, GML
-    - Projection: Should match raster CRS (auto-reprojection available)
-    - Content: Polygon features for each class (trees, grass, etc.)
+- Formats: GeoJSON, Shapefile, GPKG, GML
+- Projection: Should match raster CRS (auto-reprojection available)
+- Content: Polygon features for each class (trees, grass, etc.)
 
 ## Output Files
 
 The package generates:
 
-    - `glcm_contrast.tif` - Texture contrast values
-    - `glcm_entropy.tif` - Texture entropy values
-    - `glcm_correlation.tif` - Texture correlation values
-    - `window_optimization_results.csv` - Optimization metrics
-    - Visualization plots for window size selection
+- `glcm_contrast.tif` - Texture contrast values
+- `glcm_entropy.tif` - Texture entropy values
+- `glcm_correlation.tif` - Texture correlation values
+- `window_optimization_results.csv` - Optimization metrics
+- Visualization plots for window size selection
 
 Happy analyzing! 🌳🏙️📊
