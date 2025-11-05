@@ -1,5 +1,7 @@
 # GLCM Analyzer
 
+![Python 3.7-3.13](https://img.shields.io/badge/python-3.7%20|%203.8%20|%203.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue)
+
 A high-performance Python package for Gray-Level Co-occurrence Matrix (GLCM) texture analysis of satellite imagery, optimized for large-scale urban and arid environments. Perfect for land cover classification, vegetation analysis, and urban mapping.
 
 # Features
@@ -26,6 +28,24 @@ pip install -e .
 
 # Or install dependencies directly
 pip install rasterio scikit-image geopandas matplotlib tqdm pandas
+```
+## Package Structure
+
+```text
+GLCM/
+├── glcm_analyzer/            # Python package
+│ ├── init.py                 # Package initialization
+│ ├── core.py                 # Core GLCM processing functions
+│ ├── optimization.py         # Window size optimization algorithms
+│ ├── vector_utils.py         # Vector data conversion utilities
+│ └── utils.py                # General helper functions
+├── examples/                 # Example scripts
+│ ├── optimize_window_size.py # Window optimization example
+│ └── run_parallel_glcm.py    # Full processing example
+├── setup.py                  # Package configuration
+├── README.md                 # This documentation
+├── test_python313.py         # Python compatibility testing
+└── diagnose_skimage.py       # scikit-image diagnostics
 ```
 
 # Quick Start
@@ -74,6 +94,7 @@ tree_stats = get_vector_statistics("data/trees.geojson")
 grass_stats = get_vector_statistics("data/grass.geojson")
 
 # 2. Find optimal parameters
+# OPTION 1:
 print("Optimizing GLCM window size...")
 results_df, optimal_ws = optimize_window_size_from_vectors(
     panchromatic_path="data/riyadh_pan_0.35m.tif",
@@ -84,6 +105,19 @@ results_df, optimal_ws = optimize_window_size_from_vectors(
     max_workers=8
 )
 
+# OPTION 2: 
+center_coords = (679579, 2736332)  # Example UTM coordinates
+print(f"Optimizing GLCM window size around coordinates: {center_coords}")
+results_df, optimal_ws = optimize_window_size_from_vectors(
+    panchromatic_path=panchromatic_path,
+    tree_vector_path=tree_vector_path,
+    grass_vector_path=grass_vector_path,
+    output_dir=output_dir,
+    sample_km_side=10,
+    center_coords=center_coords,  
+    max_workers=8
+)
+    
 # 3. Process entire dataset
 print(f"Running full GLCM analysis with {optimal_ws}x{optimal_ws} window...")
 hybrid_parallel_glcm(
@@ -99,7 +133,7 @@ print("Workflow complete! Use textures for Random Forest classification.")
 
 # Core Functions
 ```bash
-optimize_window_size_from_vectors(panchromatic_path, tree_vector_path, grass_vector_path, output_dir, square_side_km=10, center_coords=None, max_workers=8)
+optimize_window_size_from_vectors(panchromatic_path, tree_vector_path, grass_vector_path, output_dir, sample_km_size=10, center_coords=None, max_workers=8)
 ```
 Find optimal GLCM window size using vector polygon training data.
 
