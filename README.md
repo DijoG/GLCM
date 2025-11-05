@@ -107,7 +107,7 @@ results_df, optimal_ws = optimize_window_size_from_vectors(
 
 # OPTION 2: 
 center_coords = (679579, 2736332)  # Example UTM coordinates
-print(f"Optimizing GLCM window size around coordinates: {center_coords}")
+print(f"Optimizing GLCM window size around coordinates: {center_coords}...")
 results_df, optimal_ws = optimize_window_size_from_vectors(
     panchromatic_path="data/riyadh_pan_0.35m.tif",
     tree_vector_path="data/trees.geojson",
