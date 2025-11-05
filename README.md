@@ -139,7 +139,7 @@ Parameters:
 - Projection: Should match raster CRS (auto-reprojection available)
 - Content: Polygon features for each class (trees, grass, etc.)
 
-## Output Files
+# Output Files
 
 The package generates:
 
