@@ -29,7 +29,7 @@ pip install -e .
 # Or install dependencies directly
 pip install rasterio scikit-image geopandas matplotlib tqdm pandas
 ```
-## Package Structure
+# Package Structure
 
 ```text
 GLCM/
