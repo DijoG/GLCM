@@ -14,7 +14,7 @@ A high-performance Python package for Gray-Level Co-occurrence Matrix (GLCM) tex
 
 - 🌳 Vegetation Analysis: Specialized for tree vs. grass classification in arid urban areas
 
-- 💫 Multiple Textures: Compute contrast, entropy, correlation, and other GLCM features
+- 💫 Multiple Textures: Compute contrast, entropy and correlation GLCM features
 
 - 🐍 Python 3.7-3.13: Full compatibility across Python versions
 
