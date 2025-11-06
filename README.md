@@ -175,10 +175,10 @@ Parameters:
 
 # Output Files
 
+- Visualization plots for window size selection
 - `glcm_contrast.tif` - Texture contrast values
 - `glcm_entropy.tif` - Texture entropy values
 - `glcm_correlation.tif` - Texture correlation values
 - `window_optimization_results.csv` - Optimization metrics
-- Visualization plots for window size selection
 
 Happy analyzing! 🌳🏙️📊
