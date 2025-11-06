@@ -57,7 +57,7 @@ from glcm_analyzer.vector_utils import get_vector_statistics
 
 # Find the optimal GLCM window size for your data
 results_df, optimal_ws = optimize_window_size_from_vectors(
-    panchromatic_path="data/riyadh_pan_0.35m.tif",
+    panchromatic_path="data/riyadh_pan_035m.tif",
     tree_vector_path="data/training/tree_polygons.geojson",
     grass_vector_path="data/training/grass_polygons.geojson", 
     output_dir="results/optimization",
@@ -74,7 +74,7 @@ from glcm_analyzer.core import hybrid_parallel_glcm
 
 # Process entire dataset with optimal settings
 hybrid_parallel_glcm(
-    input_path="data/riyadh_pan_0.35m.tif",
+    input_path="data/riyadh_pan_035m.tif",
     output_dir="results/glcm_textures",
     window_size=11,  # From optimization step
     chunk_size=2048,
@@ -97,7 +97,7 @@ grass_stats = get_vector_statistics("data/grass.geojson")
 # OPTION 1:
 print("Optimizing GLCM window size...")
 results_df, optimal_ws = optimize_window_size_from_vectors(
-    panchromatic_path="data/riyadh_pan_0.35m.tif",
+    panchromatic_path="data/riyadh_pan_035m.tif",
     tree_vector_path="data/trees.geojson",
     grass_vector_path="data/grass.geojson",
     output_dir="results/optimization",
@@ -109,7 +109,7 @@ results_df, optimal_ws = optimize_window_size_from_vectors(
 center_coords = (679579, 2736332)  # Example UTM coordinates
 print(f"Optimizing GLCM window size around coordinates: {center_coords}...")
 results_df, optimal_ws = optimize_window_size_from_vectors(
-    panchromatic_path="data/riyadh_pan_0.35m.tif",
+    panchromatic_path="data/riyadh_pan_035m.tif",
     tree_vector_path="data/trees.geojson",
     grass_vector_path="data/grass.geojson",
     output_dir="results/optimization",
@@ -121,7 +121,7 @@ results_df, optimal_ws = optimize_window_size_from_vectors(
 # 3. Process entire dataset
 print(f"Running full GLCM analysis with {optimal_ws}x{optimal_ws} window...")
 hybrid_parallel_glcm(
-    input_path="data/riyadh_pan_0.35m.tif",
+    input_path="data/riyadh_pan_035m.tif",
     output_dir="results/glcm_textures",
     window_size=optimal_ws,
     chunk_size=2048,

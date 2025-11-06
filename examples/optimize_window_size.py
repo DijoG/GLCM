@@ -11,7 +11,7 @@ from glcm_analyzer import optimize_window_size_from_vectors, get_vector_statisti
 
 def main():
     # Input files
-    panchromatic_path = "data/riyadh_pan_0.35m.tif"
+    panchromatic_path = "data/riyadh_pan_035m.tif"
     tree_vector_path = "data/training/tree_polygons.geojson"  
     grass_vector_path = "data/training/grass_polygons.geojson"
     output_dir = "results/window_optimization"
@@ -31,7 +31,7 @@ def main():
         tree_vector_path=tree_vector_path,
         grass_vector_path=grass_vector_path,
         output_dir=output_dir,
-        sample_km=10,      # 10x10 km sample area
+        sample_km_side=10,      # 10x10 km sample area
         max_workers=8
         # center_coords not specified - uses default None (center of image)
     )
@@ -43,7 +43,7 @@ def main():
     #     tree_vector_path=tree_vector_path,
     #     grass_vector_path=grass_vector_path,
     #     output_dir=output_dir,
-    #     sample_km=10,
+    #     sample_km_side=10,
     #     center_coords=center_coords,  
     #     max_workers=8
     # )
