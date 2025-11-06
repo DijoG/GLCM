@@ -144,7 +144,7 @@ Parameters:
 - `output_dir`: Directory for temporary masks and results
 - `sample_km_side`: Side length of square sample area in km
 - `center_coords`: Optional (x,y) coordinates for specific sampling area
-- `max_workers`: Number of parallel workers
+- `max_workers`: Number of parallel workers (cores)
 
 ```bash
 hybrid_parallel_glcm(input_path, output_dir, window_size=11, chunk_size=2048, max_workers=None, metrics=None)
