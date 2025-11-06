@@ -175,8 +175,6 @@ Parameters:
 
 # Output Files
 
-The package generates:
-
 - `glcm_contrast.tif` - Texture contrast values
 - `glcm_entropy.tif` - Texture entropy values
 - `glcm_correlation.tif` - Texture correlation values
