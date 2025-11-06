@@ -10,7 +10,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from glcm_analyzer import hybrid_parallel_glcm
 
 def main():
-    input_image = "data/riyadh_pan_035m.tif"
+    input_image = "data/riyadh_pan_highres.tif"
     output_directory = "results/glcm_textures"
     
     print("Running parallel GLCM computation...")
