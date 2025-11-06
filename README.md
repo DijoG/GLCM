@@ -2,7 +2,7 @@
 
 ![Python 3.7-3.13](https://img.shields.io/badge/python-3.7%20|%203.8%20|%203.9%20|%203.10%20|%203.11%20|%203.12%20|%203.13-blue)
 
-A high-performance Python package for Gray-Level Co-occurrence Matrix (GLCM) texture analysis of satellite imagery, optimized for large-scale urban and arid environments. Perfect for land cover classification, vegetation analysis, and urban mapping.
+A high-performance Python package for Gray-Level Co-occurrence Matrix (GLCM) texture analysis of satellite imagery, optimized for large-scale urban and arid environments. Useful for land cover classification, vegetation analysis, and urban mapping.
 
 # Features
 
